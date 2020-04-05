@@ -1,7 +1,9 @@
 # Real Time Twitter Sentiment Analysis using User Specified Topics
 ### Collabarators 
 Gurjot Kaur
+
 Harshitha Reddy
+
 Siddhant Nimbalkar
 
 
