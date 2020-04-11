@@ -27,9 +27,9 @@ def tweet_cleaner(text):
 clean_tweet_texts = []
 for i in range(len(df_tweets.index)):
   clean_tweet_texts.append(tweet_cleaner(df_tweets['Tweet'][i]))
-  
 
 clean_tweets = pd.DataFrame(clean_tweet_texts,columns=['Tweet'])
+clean_tweets = clean_tweets.dropna()
 # write clean_tweets to S3 bucket
 
 
