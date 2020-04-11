@@ -47,5 +47,5 @@ scraped_tweets = [tweet.text for tweet in tweets]
 
 """# Creating a dataframe"""
 all_tweets = pd.DataFrame({'tweets' : scraped_tweets})
-all_tweets.to_csv("tweetsrandom.csv")
+
 
