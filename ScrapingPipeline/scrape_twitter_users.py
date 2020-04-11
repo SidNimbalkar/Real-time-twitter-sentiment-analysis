@@ -1,6 +1,6 @@
 import tweepy
 import datetime
-import xlsxwriter
+import pandas as pd
 
 # credentials from https://apps.twitter.com/
 consumerKey = "w9Dj65V9mr4v1OCml72rlersQ"
@@ -44,4 +44,4 @@ for username in user_list:
      
 scraped_tweets = [tweet.text for tweet in tweets_result]
 
-all_tweets = pd.DataFrame({'Tweet' : scraped_tweets})
+df_users = pd.DataFrame({'Tweet' : scraped_tweets})
