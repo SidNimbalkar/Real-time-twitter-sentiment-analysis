@@ -4,10 +4,6 @@ from nltk.tokenize import WordPunctTokenizer
 from bs4 import BeautifulSoup
 import re
 
-#Store these three files on S3 bucket(maybe) don't think its needed though
-df_users = pd.read_excel("tweetsusers.xlsx")
-df_random = pd.read_csv("tweetsrandom.csv")
-df_kaggle = pd.read_csv("tweetskaggle.csv")
 
 df_users = df_users.drop(['Created_at'],axis=1)
 df_random = df_random.rename(columns={"Tweets": "Tweet"})
