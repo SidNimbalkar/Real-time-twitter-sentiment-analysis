@@ -44,4 +44,4 @@ for username in user_list:
      
 scraped_tweets = [tweet.text for tweet in tweets_result]
 
-all_tweets = pd.DataFrame({'tweets' : scraped_tweets})
+all_tweets = pd.DataFrame({'Tweet' : scraped_tweets})
