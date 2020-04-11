@@ -4,16 +4,8 @@ from nltk.tokenize import WordPunctTokenizer
 from bs4 import BeautifulSoup
 import re
 
-
-df_users = df_users.drop(['Created_at'],axis=1)
-df_random = df_random.rename(columns={"Tweets": "Tweet"})
-df_kaggle = df_kaggle.rename(columns={"Tweets": "Tweet"})
-df_kaggle = df_kaggle.drop(['Created_At'],axis = 1)
-
 frames = [df_users, df_kaggle, df_random]
 df_tweets = pd.concat(frames,ignore_index= True)
-#Write df_tweets as csv to S3 bucket for pipeline 
-
 
 tok = WordPunctTokenizer()
 pat1 = r'@[A-Za-z0-9]+'
