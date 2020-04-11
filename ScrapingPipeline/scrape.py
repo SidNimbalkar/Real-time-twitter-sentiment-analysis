@@ -35,10 +35,10 @@ class TrainPipeline(FlowSpec):
 
         nltk.download('stopwords')
 
-        consumer_key = "w9Dj65V9mr4v1OCml72rlersQ"
-        consumer_secret = "PRpUhWbRvGQ1o3xkdalGUGlB1cwjNSmjFshba09e0nKdafcuHY"
-        access_token = "838352454517424128-aUaIuR6IgUyUZzwdOZ3JvVPlaDoJrYw"
-        access_token_secret = "ENAPFU3NUDYHB79kdGwjPGlDYQFhTUh0BIYElcCX2DTI5"
+        consumer_key = ""
+        consumer_secret = ""
+        access_token = ""
+        access_token_secret = ""
         auth = tw.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_token, access_token_secret)
         api = tw.API(auth,wait_on_rate_limit=True)
@@ -85,10 +85,10 @@ class TrainPipeline(FlowSpec):
 
         nltk.download('stopwords')
 
-        consumer_key = "w9Dj65V9mr4v1OCml72rlersQ"
-        consumer_secret = "PRpUhWbRvGQ1o3xkdalGUGlB1cwjNSmjFshba09e0nKdafcuHY"
-        access_token = "838352454517424128-aUaIuR6IgUyUZzwdOZ3JvVPlaDoJrYw"
-        access_token_secret = "ENAPFU3NUDYHB79kdGwjPGlDYQFhTUh0BIYElcCX2DTI5"
+        consumer_key = ""
+        consumer_secret = ""
+        access_token = ""
+        access_token_secret = ""
         auth = tw.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_token, access_token_secret)
         api = tw.API(auth,wait_on_rate_limit=True)
