@@ -3,6 +3,11 @@
     We then write this dataset to the S3 bucket and use it to train a machine learning model in our next pipeline
 """
 
+"""
+    In this pipeline we will scrape tweets and create a labelled dataset using Amazon comprehend API
+    We then write this dataset to the S3 bucket and use it to train a machine learning model in our next pipeline
+"""
+
 from metaflow import FlowSpec, step, retry, catch, batch, IncludeFile, Parameter, conda, conda_base,S3
 import boto3
 import csv
@@ -133,103 +138,86 @@ class TrainPipeline(FlowSpec):
 
         self.combined_df = pd.DataFrame()
         self.combined_df = pd.concat([inputs.scrapping2.df_users, inputs.scrapping.all_tweets], ignore_index=True)
-        print (inputs.scrapping.all_tweets)
-
-
-
 
 
         self.next(self.preprocessing)
 
 
-    """@conda(libraries={'pandas' : '1.0.1','nltk': '3.4.5','smart_open':'1.9.0'})
+    @conda(libraries={'pandas' : '1.0.1','nltk': '3.4.5'})
     @step
     def preprocessing(self):
-        import re
         import pandas as pd
-        from nltk import tokenize
+        from nltk.tokenize import word_tokenize
         import string
-        import nltk
-        from nltk.corpus import stopwords
+        import re
+        List_clean = []
+        """
+        def preprocess_tweet(text):
+            # Check characters to see if they are in punctuation
+            nopunc = text
+            # remove URLs
+            nopunc = re.sub('((www\.[^\s]+)|(https?://[^\s]+)|(http?://[^\s]+))', '', nopunc)
+            nopunc = re.sub(r'http\S+', '', nopunc)
+            # remove usernames
+            nopunc = re.sub('@[^\s]+', '', nopunc)
+            # remove the # in #hashtag
+            nopunc = re.sub(r'#([^\s]+)', r'\1', nopunc)
+            return (nopunc)
 
-        nltk.download('punkt')
-        nltk.download('stopwords')
-        nltk.download('words')
-        nltk.download('wordnet')
+        for x in self.combined_df['Tweet']:
+            List_clean.append(preprocess_tweet(x))
 
-
-        def remove_punct(text):
-            text  = "".join([char for char in text if char not in string.punctuation])
-            text = re.sub('[0-9]+', '', text)
-            return text
-        self.all_tweets['Tweet_punct'] = self.all_tweets['tweets'].apply(lambda x: remove_punct(x))
-
-        def tokenization(text):
-          text = re.split('\W+', text)
-          return text
-        self.all_tweets['Tweet_tokenized'] = self.all_tweets['Tweet_punct'].apply(lambda x: tokenization(x.lower()))
-
-        stopword = nltk.corpus.stopwords.words('english')
-        def remove_stopwords(text):
-            text = [word for word in text if word not in stopword]
-            return text
-        self.all_tweets['Tweet_nonstop'] = self.all_tweets['Tweet_tokenized'].apply(lambda x: remove_stopwords(x))
-
-        ps = nltk.PorterStemmer()
-
-        def stemming(text):
-            text = [ps.stem(word) for word in text]
-            return text
-        self.all_tweets['Tweet_stemmed'] = self.all_tweets['Tweet_nonstop'].apply(lambda x: stemming(x))
-
-        wn = nltk.WordNetLemmatizer()
-
-        def lemmatizer(text):
-            str = " "
-            text = [wn.lemmatize(word) for word in text]
-            return str.join(text)
-        self.all_tweets['Tweet_lemmatized'] = self.all_tweets['Tweet_nonstop'].apply(lambda x: lemmatizer(x))
-
-
+        self.clean_df = pd.DataFrame(List_clean,columns=['tweet'])
+        """
         self.next(self.labelling)
 
 
-    @conda(libraries={'pandas' : '1.0.1','nltk': '3.4.5'})
+    @conda(libraries={'pandas' : '1.0.1'})
     @step
     def labelling(self):
-        import json
         import pandas as pd
         import boto3
-        key = 'AKIAJG5BRIEPKOSCS5WQ'
-        sec_key = 'LmFTVSfFhQgJTuL/hHlKHw2XGpYXI5ShjvqCi7t6'
-        json_file = []
+        from metaflow import S3
+        def create_sentiment_aws(row):
+            """Uses AWS Comprehend to Create Sentiments on a DataFrame"""
 
-        comprehend = boto3.client(service_name = 'comprehend', aws_access_key_id=key, aws_secret_access_key=sec_key, region_name='us-east-1')
+            try:
+              comprehend = boto3.client(service_name='comprehend', region_name="us-east-2")
+              payload = comprehend.detect_sentiment(Text=row, LanguageCode='en')
+              sentiment = payload['Sentiment']
+            except Exception:
+              print("Size exceeded:  Fail")
+              return None
+            return sentiment
 
-        clean_tweet = self.all_tweets['Tweet_lemmatized'].head(10)
+        def apply_sentiment_aws(df, column="text"):
+            """Uses Pandas Apply to Create Sentiment Analysis"""
+            df['Sentiment'] = df[column].apply(create_sentiment_aws)
+            return df
 
-        print('Calling DetectSentiment')
-        for tweet in clean_tweet:
-          print(json.dumps(comprehend.detect_sentiment(Text=tweet, LanguageCode='en'), sort_keys=True, indent=4))
-        print('End of DetectSentiment\n')
+        L_aws = []
 
-        scores = []
-        sentiment_score = []
-        for x in range(0,25000):
-          scores.append(json_file[0:25000][x]['SentimentScore'])
+        #for x in self.clean_df['tweet']:
+        for x in self.combined_df['Tweet']:
+            comprehend = boto3.client(service_name='comprehend', region_name="us-east-1")
+            comp_str = comprehend.detect_sentiment(Text=x, LanguageCode='en')
+            if comp_str['Sentiment'] == 'POSITIVE':
+                L_aws.append([x,1])
+            elif comp_str['Sentiment'] == 'NEGATIVE':
+                L_aws.append([x,-1])
+            elif comp_str['Sentiment'] == 'NEUTRAL':
+                L_aws.append([x,0])
 
-        for i in range(0,25000):
-          all_values = scores[i].values()
-          sentiment_score.append(max(all_values))
+        final_sentiment = pd.DataFrame(L_aws, columns = ['Tweet','Score'])
 
-        label = []
-        for n in range(0,25000):
-          label.append(json_file[0:25000][n]['Sentiment'])
+        final_sentiment.to_csv('labeldataset.csv',index=False)
 
-        label_tweets = pd.DataFrame({'Tweets' : clean_tweet, 'label' : label, 'Score' : sentiment_score})
+        with S3(s3root='s3://sentstorage/') as s3:
+            s3.put_files([('labeldataset.csv','labeldataset.csv')])
 
-        print(label_tweets)
-        self.next(self.end)"""
+
+
+        self.next(self.end)
 
     @step
     def end(self):
