@@ -46,6 +46,6 @@ for word in search_words:
 scraped_tweets = [tweet.text for tweet in tweets]
 
 """# Creating a dataframe"""
-all_tweets = pd.DataFrame({'Tweet' : scraped_tweets})
+df_random = pd.DataFrame({'Tweet' : scraped_tweets})
 
 
