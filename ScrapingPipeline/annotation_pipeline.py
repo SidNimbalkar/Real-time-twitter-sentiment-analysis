@@ -3,11 +3,6 @@
     We then write this dataset to the S3 bucket and use it to train a machine learning model in our next pipeline
 """
 
-"""
-    In this pipeline we will scrape tweets and create a labelled dataset using Amazon comprehend API
-    We then write this dataset to the S3 bucket and use it to train a machine learning model in our next pipeline
-"""
-
 from metaflow import FlowSpec, step, retry, catch, batch, IncludeFile, Parameter, conda, conda_base,S3
 import boto3
 import csv
@@ -197,8 +192,7 @@ class TrainPipeline(FlowSpec):
 
         L_aws = []
 
-        #for x in self.clean_df['tweet']:
-        for x in self.combined_df['Tweet']:
+        for x in self.clean_df['tweet']:
             comprehend = boto3.client(service_name='comprehend', region_name="us-east-1")
             comp_str = comprehend.detect_sentiment(Text=x, LanguageCode='en')
             if comp_str['Sentiment'] == 'POSITIVE':
