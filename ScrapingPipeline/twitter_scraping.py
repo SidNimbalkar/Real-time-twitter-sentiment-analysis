@@ -57,11 +57,8 @@ all_tweets = pd.DataFrame({'tweets' : scraped_tweets})
 
 all_tweets
 
-from google.colab import  drive
-drive.mount('/drive')
-all_tweets.to_csv('/drive/My Drive/dataset.txt')
-all_tweets.to_csv('/drive/My Drive/dataset.csv')
-
+all_tweets.to_csv('dataset.csv')
+all_tweets.to_excel('scraped_tweets.xlsx')
 """# Preprocessing"""
 
 import re
