@@ -42,14 +42,6 @@ for username in user_list:
   for i in tweets:
     tweets_result.append(i)
      
-workbook = xlsxwriter.Workbook("tweetsusers.xlsx")
-worksheet = workbook.add_worksheet()
-row = 0
-  
-for tweet in tweets_result:
-  worksheet.write_string(row, 0, str(tweet.created_at))
-  worksheet.write(row, 1, tweet.text)
-  row += 1
-    
-workbook.close()
-#print("Excel file ready")
+scraped_tweets = [tweet.text for tweet in tweets_result]
+
+all_tweets = pd.DataFrame({'tweets' : scraped_tweets})
