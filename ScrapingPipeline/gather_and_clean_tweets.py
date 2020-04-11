@@ -30,6 +30,7 @@ for i in range(len(df_tweets.index)):
 
 clean_tweets = pd.DataFrame(clean_tweet_texts,columns=['Tweet'])
 clean_tweets = clean_tweets.dropna()
+clean_tweet = clean_tweet.drop_duplicates()
 # write clean_tweets to S3 bucket
 
 
