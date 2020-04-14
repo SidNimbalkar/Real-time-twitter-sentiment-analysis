@@ -4,10 +4,10 @@ import mysql.connector
 import pandas as pd
 from textblob import TextBlob
 
-API_KEY = "GDh3SVKPFjWIUOmdUqOvHnjCq"
-API_SECRET_KEY = "pi1yUfsx8h9DdTVoovJtMq3AM7CUOynqb5uKBzveSf5g9bg3TD"
-ACCESS_TOEKN = "111887870-BMIWdaFCLcXGaHtSjEMckkyc49osDopzdnlRgN6m"
-ACCESS_TOKEN_SECRET = "5hAaBQDdgo3Jryp6IDAbcRQX3OUWbkRL6poBDEfxwJYK5"
+API_KEY = ""
+API_SECRET_KEY = ""
+ACCESS_TOEKN = ""
+ACCESS_TOKEN_SECRET = ""
 
 val = input("Enter topic: ")
 
