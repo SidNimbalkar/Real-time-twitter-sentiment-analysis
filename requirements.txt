@@ -1,2 +1,4 @@
 metaflow
 boto3 
+torch
+smart-open
