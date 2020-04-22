@@ -1,6 +1,6 @@
 # Real Time Twitter Sentiment Analysis using User Specified Topics <br />
 <p align="center">
-  <src="https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/logo.png">
+  <img src="https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/logo.png">
 </p>
 
 ### Collabarators 
