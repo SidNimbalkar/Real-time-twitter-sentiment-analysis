@@ -4,8 +4,8 @@
 </p>
 
 ### Collabarators 
-Gurjot Kaur<br />
-Harshitha Sanikommu<br />
+Gurjot Kaur<br/>
+Harshitha Sanikommu<br/>
 Sid Nimbalkar
 
 ### Professor
