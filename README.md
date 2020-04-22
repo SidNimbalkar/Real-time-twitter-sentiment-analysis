@@ -1,6 +1,8 @@
 # Real Time Twitter Sentiment Analysis using User Specified Topics <br />
-
+<p align="center">
 ![alt text](https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/logo.png)
+</p>
+
 ### Collabarators 
 Gurjot Kaur<br />
 Harshitha Sanikommu<br />
