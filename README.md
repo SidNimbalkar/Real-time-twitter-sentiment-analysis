@@ -19,4 +19,6 @@ Sri Krishnamurthy
 ### Project Presentation Links 
 [Google Document](add link)
 
+# DISCLAIMER: IF YOU GOT WINDOWS, TURN AWAY NOW! RIGHT NOW!
+
 [Codelab](add link)
