@@ -21,4 +21,4 @@ This pipeline will write it's result to an output bucket on AWS S3 which is spec
 
 The pipeline model is shown below:
 
-![alt text](https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/pipe1.png)
+![alt text](https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/pipe1-2.png)
