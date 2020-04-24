@@ -196,18 +196,20 @@ class TrainPipeline(FlowSpec):
             comprehend = boto3.client(service_name='comprehend', region_name="us-east-1")
             comp_str = comprehend.detect_sentiment(Text=x, LanguageCode='en')
             if comp_str['Sentiment'] == 'POSITIVE':
-                L_aws.append([x,1])
+                L_aws.append([x,2])
             elif comp_str['Sentiment'] == 'NEGATIVE':
-                L_aws.append([x,-1])
-            elif comp_str['Sentiment'] == 'NEUTRAL':
                 L_aws.append([x,0])
+            elif comp_str['Sentiment'] == 'NEUTRAL':
+                L_aws.append([x,1])
 
-        final_sentiment = pd.DataFrame(L_aws, columns = ['Tweet','Score'])
+        f_sentiment = pd.DataFrame(L_aws, columns = ['Tweet','Score'])
+        
+        final_sentiment = pd.DataFrame({'label':f_sentiment[1],'tweet': f_sentiment[0].replace(r'\n', ' ', regex=True)})
 
-        final_sentiment.to_csv('labeldataset.csv',index=False)
+        final_sentiment.to_csv('labelledtweets.tsv', sep='\t', index=False, header=False)
 
         with S3(s3root='s3://sentstorage/') as s3:
-            s3.put_files([('labeldataset.csv','labeldataset.csv')])
+            s3.put_files([('labelledtweets.tsv','labelledtweets.tsv')])
 
 
 
