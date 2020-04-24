@@ -215,10 +215,8 @@ Detailed instruction on how to run this pipeline can be found [here](https://git
 To start Druid use the following command: <br />
 `
 ./bin/start-micro-quickstart
-`
-
-Configure Druid to take in the kafka stream using the following [steps](https://druid.apache.org/docs/latest/tutorials/tutorial-kafka.html)
-
+`<br />
+Configure Druid to take in the kafka stream using the following [steps](https://druid.apache.org/docs/latest/tutorials/tutorial-kafka.html) <br />
 Once configured, Druid will ingest real time data from kafka and store it in a database 
 
 8. Now that we have our data in the Druid database, we use turnilo for Data Visualization and Analysis <br />
