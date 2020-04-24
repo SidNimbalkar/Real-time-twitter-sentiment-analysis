@@ -13,17 +13,17 @@ We then send these events to Druid where they get flattend and stored into a liv
 
 ## Run Instructions 
 
-1. Start Zookeeper <br />
+1. Start Zookeeper <br/>
 `
  bin/zookeeper-server-start.sh config/zookeeper.properties
 `
 
-2. Start Kafka <br />
+2. Start Kafka <br/>
 `
 bin/kafka-server-start.sh config/server.properties
 `
 
-3. Create two kafka topics
+3. Create two kafka topics<br/>
 `
 kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic tweet
 `
@@ -31,19 +31,18 @@ kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partit
 kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic druid
 `
 
-4. Run our Kafka Prodcuer
+4. Run our Kafka Prodcuer<br/>
 `
 python producer.py
 `
 
-5. Run our Kafka Consumer
+5. Run our Kafka Consumer<br/>
 `
 python consumer_full.py
 `
 
-We have dockerized and created a kubernetes cluster for the pipeline for ease of use
-
-Our kafka cluster can be run using the following command:
+We have dockerized and created a kubernetes cluster for the pipeline for ease of use</br>
+Our kafka cluster can be run using the following command: </br>
 `
 docker-compose up -d
 `
