@@ -150,9 +150,14 @@ Start Kafka <br />
 bin/kafka-server-start.sh config/server.properties
 `
 
-### Install Druid
+### Install Druid (Windows not supported)
 
-Follow the following [instructions](https://kafka.apache.org/quickstart) to install zookeeper and kafka on your system.
+Follow the following [instructions](https://druid.apache.org/docs/latest/tutorials/index.html) to install Druid on your system. <br />
+
+#### Prerequisites <br />
+- Java 8 (8u92+) or later
+- Linux, Mac OS X, or other Unix-like OS (Windows is not supported)
+
 
 
 ## Run Sequence
