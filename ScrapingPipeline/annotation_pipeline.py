@@ -26,7 +26,7 @@ class TrainPipeline(FlowSpec):
 
     @conda(libraries={'pandas' : '1.0.1','tweepy':'3.8.0','nltk': '3.4.5'})
     @step
-    def scrapping(self):
+    def scraping(self):
         import pandas as pd
         import tweepy as tw
         import nltk
@@ -75,7 +75,7 @@ class TrainPipeline(FlowSpec):
 
     @conda(libraries={'pandas' : '1.0.1','tweepy':'3.8.0','nltk': '3.4.5'})
     @step
-    def scrapping2(self):
+    def scraping2(self):
         import pandas as pd
         import tweepy as tw
         import nltk
