@@ -1,4 +1,4 @@
-# Real Time Twitter Sentiment Analysis with User Specified Topic <br />
+# Real Time Twitter Sentiment Analysis<br />
 <p align="center">
   <img src="https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/logo.png">
 </p>
@@ -134,6 +134,25 @@ Follow the instructions for your operating system.
 
 Follow the [instructions](https://www.sublimetext.com/3) for your operating system.\
 If you already have a prefered text editor, skip this step.
+
+### Install Kafka 
+
+Follow the following [instructions](https://kafka.apache.org/quickstart) to install zookeeper and kafka on your system. <br />
+Once done you can use the following commands to run the kafka server.
+
+Start Zookeeper <br />
+`
+ bin/zookeeper-server-start.sh config/zookeeper.properties
+`
+
+Start Kafka <br />
+`
+bin/kafka-server-start.sh config/server.properties
+`
+
+### Install Druid
+
+Follow the following [instructions](https://kafka.apache.org/quickstart) to install zookeeper and kafka on your system.
 
 
 ## Run Sequence
