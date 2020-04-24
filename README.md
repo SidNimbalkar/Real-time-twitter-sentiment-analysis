@@ -186,7 +186,11 @@ This command will instal all the required packages and update any older packages
 
 2. Now that we have our enviornment set up, we will create an S3 bucket.
 
-Follow this [link](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) and create two buckets, an input bucket and a outbucket and configure them in the pipeline files.
+Follow this [link](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) and create a S3 bucket. 
+
+3. Scraping Tweets: To run the scraping pipeline follow the [instructions](https://github.com/SidNimbalkar/CSYE7245FinalProject/tree/master/ScrapingPipeline) in the Scraping Pipeline folder.
+
+
 
 
 
