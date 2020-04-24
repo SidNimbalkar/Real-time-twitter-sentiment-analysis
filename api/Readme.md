@@ -1,8 +1,11 @@
-### Micro Service
+## Micro Service
 Here we create a micro service for our inference pipeline to use as endpoint. We create a flask API that takes in json input and generates a sentiment score for the input, we will use the model we trained using trainig_pipeline.py to get this job done.
 We then dockerize the said API.
 
-#### Run Instructions
+## Pre requisite
+- You will need the docker desktop client to be running
+
+## Run Instructions
 
 1. `docker build -t MicroService:latest .` -- this references the `Dockerfile` at `.` (current directory) to build our Docker image & tags the docker image with `MicroService:latest`
 
