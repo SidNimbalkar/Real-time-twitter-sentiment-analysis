@@ -18,7 +18,21 @@ Sri Krishnamurthy
 [Google Document](add link) [Codelab](add link)
 
 ## Overview
-
+- Scrape Historic Tweets
+- Create labelled dataset using Amazon Comprehend
+- Train a BERT model using the labelled Dataset
+- Create a microservice using the trained model
+- Scrape live data on a user specified topic
+- Ingest data into kafka
+- Set up kafka producer to produce event stream
+- Set up kafka consumers to process the events, extract essential information and perform sentiment analysis on the tweet
+- Stream this live data in a topic
+- Read the live stream into Druid
+- Flatten the data and store it as rows and column in a database
+- Visualize and Analyze data using Turnilo
+- Dockerize various components 
+- Use K8 to manage containers 
+- Deploy to EC2
 
 ## Install instructions
 
