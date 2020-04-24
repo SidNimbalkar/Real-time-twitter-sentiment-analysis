@@ -1,3 +1,5 @@
+#Created a test file for annotation pipeline to check the logic at important segments
+
 import pandas as pd
 from nltk.tokenize import word_tokenize
 import string
