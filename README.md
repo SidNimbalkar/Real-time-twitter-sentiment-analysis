@@ -224,8 +224,8 @@ Once configured, Druid will ingest real time data from kafka and store it in a d
 8. Now that we have our data in the Druid database, we use turnilo for Data Visualization and Analysis <br />
 To start Turnilo use the following command: <br />
 `
-turnilo --druid DRUITPORT
-`
+turnilo --druid DRUITPORT 
+` <br />
 DRUIDPORT is the port where Druid is running, which is `http://localhost:8888` by default.
 
 
