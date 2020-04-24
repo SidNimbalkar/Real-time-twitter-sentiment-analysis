@@ -34,7 +34,7 @@ def predict(tweet):
     return(score,sentiment)
 
 
-scores,sentiments = predict("I do not suck")
+scores,sentiments = predict("I am happy")
 
 print(scores)
 print(sentiments)
