@@ -157,7 +157,7 @@ class TrainPipeline(FlowSpec):
             nopunc = re.sub('@[^\s]+', '', nopunc)
             # remove the # in #hashtag
             nopunc = re.sub(r'#([^\s]+)', r'\1', nopunc)
-            return (nopunc)
+            return (nopunc.strip())
 
         for x in self.combined_df['Tweet']:
             List_clean.append(preprocess_tweet(x))
