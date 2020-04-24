@@ -243,5 +243,7 @@ DRUIDPORT is the port where Druid is running, which is `http://localhost:8888` b
 
 ## Future Implementations
 
+- Create a react web app as the front end of the system
+- Currently we have our kafka cluster and micro-service running on ec2, we'd like to house our database on cloud too, so it's remotely accessible 
 
 
