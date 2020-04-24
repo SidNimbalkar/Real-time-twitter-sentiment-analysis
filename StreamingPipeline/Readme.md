@@ -48,6 +48,8 @@ Our kafka cluster can be run using the following command:
 `
 docker-compose up -d
 `
+
+Now that we have our kafka stream running, we can load the data into druid for visualization and analysis
  
 ### Kafka Architecture
 
