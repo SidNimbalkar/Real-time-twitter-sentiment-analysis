@@ -24,9 +24,12 @@ We then send these events to Druid where they get flattend and stored into a liv
 bin/kafka-server-start.sh config/server.properties
 `
 
-3. Create a kafka topic 
+3. Create two kafka topics
 `
-kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic tweet
+`
+`
+kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic druid
 `
 
 4. Run our Kafka Prodcuer
@@ -39,13 +42,15 @@ python producer.py
 python consumer_full.py
 `
 
-We have dockerized and cleated a kubernetes cluster for the pipeline for ease of use
+We have dockerized and created a kubernetes cluster for the pipeline for ease of use
 
 Our kafka cluster can be run using the following command:
 `
 docker-compose up -d
 `
  
+### Kafka Architecture
 
+![alt text](https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/Kafka.png)
 
 
