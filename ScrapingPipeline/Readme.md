@@ -1,6 +1,6 @@
 ## Scraping Pipeline
 
-This Pipeline scrapes historic tweets using tweepy, Pre-processes the said tweets and uses Amazon Comprehend API to generate a sentiment score for every tweet. It then stores the labelled dataset on a S3 bucket.
+This Pipeline scrapes historic tweets using tweepy, Pre-processes the said tweets and uses Amazon Comprehend API to generate a sentiment score and sentiment for every tweet. It then stores the labelled dataset on a S3 bucket.
 
 ## Pre requisite
 
