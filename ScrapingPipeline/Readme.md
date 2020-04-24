@@ -22,3 +22,8 @@ This pipeline will write it's result to an output bucket on AWS S3 which is spec
 #### The pipeline model is shown below:
 
 ![alt text](https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/pipe1-2.png)
+
+## Testing 
+The python unittest library is used to test various logical segments of the pipeline which have been abstracted modularly in the ```ap.py``` file, the unit tests are written in  ```test_ap.py``` file and should be run in the same folder as ```ap.py``` file using 
+``` python test_ap.py ```
+ 
