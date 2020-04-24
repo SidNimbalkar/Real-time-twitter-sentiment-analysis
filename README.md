@@ -188,7 +188,30 @@ This command will instal all the required packages and update any older packages
 
 Follow this [link](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) and create a S3 bucket. 
 
-3. Scraping Tweets: To run the scraping pipeline follow the [instructions](https://github.com/SidNimbalkar/CSYE7245FinalProject/tree/master/ScrapingPipeline) in the Scraping Pipeline folder.
+3. Scraping Tweets: To run the scraping pipeline follow the detailed [instructions](https://github.com/SidNimbalkar/CSYE7245FinalProject/tree/master/ScrapingPipeline) in the Scraping Pipeline folder. <br />
+This pipeline will scrape historic tweets using tweepy library and label the dataset and save it on s3 bucket. <br />
+Run the scraping pipeline using to following command: <br />
+`
+python annotation_pipeline.py --environment=conda run
+`
+
+4. Training Pipeline: To run the scraping pipeline follow the detailed [instructions](https://github.com/SidNimbalkar/CSYE7245FinalProject/tree/master/TrainingPipeline) in the Training Pipeline folder. <br />
+This pipeline will read the labelled dataset from the s3 and train a ML sentiment analysis model (BERT), which we will use to service a fask api.
+Run the scraping pipeline using to following command: <br />
+`
+python training.py run
+`
+
+5. Run the Flask App: You can use a docker hub image to run this app or run it locally, you will find detailed instructions on how to run the api [here](https://github.com/SidNimbalkar/CSYE7245FinalProject/tree/master/api) <br />
+This is a sentiment analysis api, which will take in a text input (tweet, in our case) and provide us with a sentiment and it's score.
+Run the api using to following command: <br />
+`
+python app.py
+`
+
+6. Analysis Pipeline: This is a kafka pipeline which will injest real-time tweets and perform sentiment analysis on them and process each tweet as a event, we then store this events in druid and flatten the data, and then use turnilo for visualization. <br />
+Detailed instruction on how to run this pipeline can be found [here](https://github.com/SidNimbalkar/CSYE7245FinalProject/tree/master/StreamingPipeline)
+
 
 
 
