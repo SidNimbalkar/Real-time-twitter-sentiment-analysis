@@ -1,4 +1,4 @@
-# Real Time Twitter Sentiment Analysis using User Specified Topics <br />
+# Real Time Twitter Sentiment Analysis with User Specified Topic <br />
 <p align="center">
   <img src="https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/logo.png">
 </p>
