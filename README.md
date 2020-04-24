@@ -69,6 +69,14 @@ Now, you can configure your AWS CLI with the credentials you just created and do
 
 ** If you get an error, then please try to configure your AWS CLI again.
 
+### Get Twitter API Keys
+1. Create a free Twitter user account, This will allow you to access the Twitter developer portal.
+
+2. Navigate to [Twitter Dev Site](https://apps.twitter.com), sign in, and create a new application.
+After that, fill out all the app details. 
+Once you do this, you should have your access keys.
+
+
 ### Install Postman
 
 Follow the instructions of your operating system:
