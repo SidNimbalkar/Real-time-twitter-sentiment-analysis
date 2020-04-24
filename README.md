@@ -11,15 +11,14 @@ Sid Nimbalkar
 ### Professor
 Sri Krishnamurthy
 
-### Project Proposal
-[Google Document](add link)
-
-[Codelab](https://codelabs-preview.appspot.com/?file_id=11guPZm2NIzOZI7QMATwpICSQLIaFqfXFUYzi_k8Gdj4#0)
+### Project Proposal 
+[Google Document](add link) [Codelab](https://codelabs-preview.appspot.com/?file_id=11guPZm2NIzOZI7QMATwpICSQLIaFqfXFUYzi_k8Gdj4#0)
 
 ### Project Presentation Links 
-[Google Document](add link)
+[Google Document](add link) [Codelab](add link)
 
-[Codelab](add link)
+### Overview
+
 
 ## Install instructions
 
@@ -211,6 +210,23 @@ python app.py
 
 6. Analysis Pipeline: This is a kafka pipeline which will injest real-time tweets and perform sentiment analysis on them and process each tweet as a event, we then store this events in druid and flatten the data, and then use turnilo for visualization. <br />
 Detailed instruction on how to run this pipeline can be found [here](https://github.com/SidNimbalkar/CSYE7245FinalProject/tree/master/StreamingPipeline)
+
+7. Now that we have our kafka stream running, we will start Druid and configure it to ingest the kafka stream. <br />
+To start Druid use the following command: <br />
+`
+./bin/start-micro-quickstart
+`
+
+Configure Druid to take in the kafka stream using the following [steps](https://druid.apache.org/docs/latest/tutorials/tutorial-kafka.html)
+
+Once configured, Druid will ingest real time data from kafka and store it in a database 
+
+8. Now that we have our data in the Druid database, we use turnilo for Data Visualization and Analysis <br />
+To start Turnilo use the following command: <br />
+`
+turnilo --druid DRUITPORT
+`
+DRUIDPORT is the port where Druid is running, which is `http://localhost:8888` by default.
 
 
 
