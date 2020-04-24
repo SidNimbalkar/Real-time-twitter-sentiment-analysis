@@ -27,8 +27,6 @@ bin/kafka-server-start.sh config/server.properties
 `
 kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic tweet
 `
-<br/>
-
 `
 kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic druid
 `
