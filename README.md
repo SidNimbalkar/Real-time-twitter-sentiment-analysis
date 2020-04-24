@@ -17,7 +17,7 @@ Sri Krishnamurthy
 ### Project Presentation Links 
 [Google Document](add link) [Codelab](add link)
 
-### Overview
+## Overview
 
 
 ## Install instructions
@@ -227,7 +227,7 @@ turnilo --druid DRUITPORT
 DRUIDPORT is the port where Druid is running, which is `http://localhost:8888` by default.
 
 
-
+## Future Implementations
 
 
 
