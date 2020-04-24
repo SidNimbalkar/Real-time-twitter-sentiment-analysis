@@ -23,7 +23,7 @@ class Train(FlowSpec):
 
         # Load the dataset into a pandas dataframe.
         with S3() as s3:
-            df = pd.read_csv(smart_open.smart_open('s3://sentstorage/scrape/labelleds.tsv'),delimiter='\t', header=None, names=['label','tweet'])
+            df = pd.read_csv(smart_open.smart_open('s3://sentstorage/scrape/labelledtweets.tsv'),delimiter='\t', header=None, names=['label','tweet'])
         #df = pd.read_csv("t.tsv", delimiter='\t', header=None, names=['label','tweet'])
         self.tweets = df.tweet.values
         self.labels = df.label.values
