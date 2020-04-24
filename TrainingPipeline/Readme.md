@@ -1,7 +1,9 @@
 
 ### Training Pipeline 
 
-In this pipeline we train a ML model BERT Model, we train this model on the labeled dataset that we generated in the Annotation Pipeline using historic tweets.
+In this pipeline we train a ML model BERT Model, we train this model on the labeled dataset that we generated in the Annotation Pipeline using historic tweets. 
+
+We will use the pickled modle to create a flask api that will take in a json input and create a sentiment.
 
 #### Run Instructions 
 
