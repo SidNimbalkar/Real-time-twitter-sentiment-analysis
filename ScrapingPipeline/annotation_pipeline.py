@@ -146,7 +146,7 @@ class TrainPipeline(FlowSpec):
         import string
         import re
         List_clean = []
-        """
+        
         def preprocess_tweet(text):
             # Check characters to see if they are in punctuation
             nopunc = text
@@ -163,7 +163,7 @@ class TrainPipeline(FlowSpec):
             List_clean.append(preprocess_tweet(x))
 
         self.clean_df = pd.DataFrame(List_clean,columns=['tweet'])
-        """
+        
         self.next(self.labelling)
 
 
