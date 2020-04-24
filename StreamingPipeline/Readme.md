@@ -2,9 +2,8 @@
 
 This is a Kafka pipeline to stream and process live data. We scrape live tweets into kafka using tweepy, 
 we then use some pre-processing to clean the tweets, we use the MicroService we created to get sentiment scores for our tweets, 
-the kafka events are generates which pack all the timestamp, tweet text, all the tweet related information like retweet count, favorite_count, etc.
+the kafka events that are generated pack the timestamp, tweet text, all the tweet related information like retweet count, favorite_count, etc.
 We then send these events to Druid where they get flattend and stored into a live table, We then use the tool turnilo on druid dataset to visualize the live stream.
-
 
 
 ## Pre requisite
