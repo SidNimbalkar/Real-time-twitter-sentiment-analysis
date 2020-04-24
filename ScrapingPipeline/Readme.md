@@ -19,6 +19,6 @@ python annotation_pipeline.py --environment=conda run
 This pipeline will write it's result to an output bucket on AWS S3 which is specified and configureed in the pipeline.
 
 
-The pipeline model is shown below:
+#### The pipeline model is shown below:
 
 ![alt text](https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/pipe1-2.png)
