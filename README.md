@@ -154,11 +154,27 @@ bin/kafka-server-start.sh config/server.properties
 
 Follow the following [instructions](https://druid.apache.org/docs/latest/tutorials/index.html) to install Druid on your system. <br />
 
-#### Prerequisites <br />
+#### Pre-requisites <br />
 - Java 8 (8u92+) or later
 - Linux, Mac OS X, or other Unix-like OS (Windows is not supported)
 
+### Install Turnilo (Windows not supported)
 
+#### Pre-requisites <br />
+- Node.js - 10.x or 8.x version.
+- npm - 6.5.0 version.
+
+Once you have the pre-requisite packages:
+
+Install Turnilo distribution using npm. <br />
+`
+npm install -g turnilo
+`
+
+To connect to the existing Druid broker using --druid command line option. Turnilo will automatically introspect your Druid broker and figure out available datasets. <br />
+`
+turnilo --druid http[s]://druid-broker-hostname[:port]
+`
 
 ## Run Sequence
 
