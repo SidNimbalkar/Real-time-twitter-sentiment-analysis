@@ -209,7 +209,7 @@ python annotation_pipeline.py --environment=conda run
 `
 
 4. Training Pipeline: To run the scraping pipeline follow the detailed [instructions](https://github.com/SidNimbalkar/CSYE7245FinalProject/tree/master/TrainingPipeline) in the Training Pipeline folder. <br />
-This pipeline will read the labelled dataset from the s3 and train a ML sentiment analysis model (BERT), which we will use to service a fask api.
+This pipeline will read the labelled dataset from the s3 and train a ML sentiment analysis model (BERT), which we will use to service a flask api.
 Run the scraping pipeline using to following command: <br />
 `
 python training.py run
