@@ -1,19 +1,22 @@
-## Annotation Pipeline
+## Scraping Pipeline
 
-This Pipeline scrapes Earning calls from SeekingAlpha, Pre-processes the said calls and uses Google NLP API to generate a sentiment score for every sentence. 
+This Pipeline scrapes historic tweets using tweepy, Pre-processes the said tweets and uses Amazon Comprehend API to generate a sentiment score for every tweet. It then stores the labelled dataset on a S3 bucket.
 
 ## Pre requisite
 
-Set up your google account to access the NLP API, and configure following the provided [link](https://cloud.google.com/natural-language/docs/sentiment-tutorial)
+- The requirements.txt in the main Readme should be installed
 
+- To access the Amazon Comprehend, you'll need an AWS account, with the account keys configured 
+
+- Since the pipeline is designed using Metaflow, you'll need to run it on Linux, Mac OS X, or other Unix-like OS (Windows is not supported)
 
 ## Run Instructions 
 
 ```
-python testp.py --environment=conda run
+python annotation_pipeline.py --environment=conda run
 ```
 
-This pipeline will write it's result to an output bucket on AWS S3 which you will specify and configure in the pipeline.
+This pipeline will write it's result to an output bucket on AWS S3 which is specified and configureed in the pipeline.
 
 
 The pipeline model is shown below:
