@@ -24,12 +24,13 @@ bin/kafka-server-start.sh config/server.properties
 `
 
 3. Create two kafka topics<br/>
-```
+`
 kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic tweet
-```
-```
+`
+<br/>
+`
 kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic druid
-```
+`
 
 4. Run our Kafka Prodcuer<br/>
 `
