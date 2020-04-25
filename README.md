@@ -197,6 +197,18 @@ To connect to the existing Druid broker using --druid command line option. Turni
 turnilo --druid http[s]://druid-broker-hostname[:port]
 `
 
+### Install Superset (Windows not supported)
+
+#### Pre-requisites <br />
+- Docker Client
+
+Use the commands to install Superset Incubator
+`git clone https://github.com/apache/incubator-superset/ ` <br />
+`cd incubator-superset` <br />
+`docker-compose up` <br />
+
+Use the port: `http://localhost:8088` to access superset portal 
+
 ## Run Sequence
 
 1. Run requirements.txt
