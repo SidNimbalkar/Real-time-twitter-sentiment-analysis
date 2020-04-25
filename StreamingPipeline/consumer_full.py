@@ -20,11 +20,11 @@ followers_count_average=0
 
 producer = KafkaProducer(bootstrap_servers=['localhost:9092'])
 tweet_dict= {}
-
+url = 'http://localhost:5000/predict'
 for msg in consumer1:
     tweet_text_json=json.loads(msg.value.decode('utf-8'))
     try:
-        tweet = TextBlob(tweet_text_json['text'])
+        tweet =(requests.post(url, json = tweet_text_json['text'])).text.split()
         tweet_favorite_count = tweet_text_json['retweeted_status']['favorite_count']
         tweet_followers_count = tweet_text_json['retweeted_status']['user']['followers_count']
 
