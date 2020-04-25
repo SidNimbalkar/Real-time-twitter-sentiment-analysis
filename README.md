@@ -202,7 +202,7 @@ turnilo --druid http[s]://druid-broker-hostname[:port]
 #### Pre-requisites <br />
 - Docker Client
 
-Use the commands to install Superset Incubator
+Use the commands to install Superset Incubator  <br />
 `git clone https://github.com/apache/incubator-superset/ ` <br />
 `cd incubator-superset` <br />
 `docker-compose up` <br />
@@ -259,6 +259,10 @@ To start Turnilo use the following command: <br />
 turnilo --druid DRUITPORT 
 ` <br />
 DRUIDPORT is the port where Druid is running, which is `http://localhost:8888` by default.
+
+9. Load the Superset Dashboard <br />
+One you open Superset, load the druid dataset into it using the following [link](https://superset.incubator.apache.org/druid.html) <br />
+Then select import, and import the `analysis.json` file, which will start up the dashboard.
 
 
 ## Future Implementations
