@@ -18,7 +18,7 @@ python training.py run
 ```
 
 This is the model for our training pipeline:
-![alt text]()
+![alt text](https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/updated_p2.png)
 
 
 ## Testing 
