@@ -49,7 +49,7 @@ docker-compose up -d
 
 Now that we have our kafka stream running, we can load the data into druid for visualization and analysis
 
-### Streaming Pipeline FLow
+### Streaming Pipeline Flow
 ![alt text](https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/updated_p2.png)
  
 ### Kafka Architecture
