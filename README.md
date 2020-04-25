@@ -1,4 +1,4 @@
-# Real Time Twitter Sentiment Analysis<br />
+# Real Time Twitter Sentiment Analysis for Trend tracking or Brand Improvement<br />
 <p align="center">
   <img src="https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/logo.png">
 </p>
