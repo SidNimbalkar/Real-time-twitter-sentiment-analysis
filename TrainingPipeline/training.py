@@ -186,8 +186,8 @@ class Train(FlowSpec):
         #    s3.put_files([('model','model')])
         #self.model_to_save.save_pretrained('s3://sentstorage/model')
         #self.tokenizer.save_pretrained('/Users/sid/Desktop/train')
-        #with S3(s3root='s3://sentstorage/model') as s3:
-        #    s3.put_many(self.model_to_save.save_pretrained())
+        with S3(s3root='s3://sentstorage/model') as s3:
+            s3.put_many(self.model_to_save.save_pretrained())
 
 
 
