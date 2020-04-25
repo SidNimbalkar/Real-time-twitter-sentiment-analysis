@@ -12,7 +12,9 @@ Sid Nimbalkar
 Sri Krishnamurthy
 
 ### Project Proposal 
-[Google Document](add link) [Codelab](https://codelabs-preview.appspot.com/?file_id=11guPZm2NIzOZI7QMATwpICSQLIaFqfXFUYzi_k8Gdj4#0)
+[Google Document](https://docs.google.com/document/d/11guPZm2NIzOZI7QMATwpICSQLIaFqfXFUYzi_k8Gdj4/edit?usp=sharing) 
+
+[Codelab](https://codelabs-preview.appspot.com/?file_id=11guPZm2NIzOZI7QMATwpICSQLIaFqfXFUYzi_k8Gdj4#0)
 
 ### Project Presentation Links 
 [Google Document](add link) [Codelab](add link)
