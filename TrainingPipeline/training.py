@@ -181,13 +181,11 @@ class Train(FlowSpec):
         # Save a trained model, configuration and tokenizer using `save_pretrained()`.
         # They can then be reloaded using `from_pretrained()`
         self.model_to_save = self.model.module if hasattr(self.model, 'module') else self.model  # Take care of distributed/parallel training
-        torch.save(self.model_to_save.state_dict(), 'saved.pt')
-        #with S3(s3root='s3://sentstorage/model') as s3:
-        #    s3.put_files([('model','model')])
-        #self.model_to_save.save_pretrained('s3://sentstorage/model')
-        #self.tokenizer.save_pretrained('/Users/sid/Desktop/train')
-        with S3(s3root='s3://sentstorage/model') as s3:
-            s3.put_many(self.model_to_save.save_pretrained())
+        
+        with S3(s3root='s3://sentstorage/model') as s3:         
+            self.model_to_save.save_pretrained('s3://sentstorage/model')
+            self.tokenizer.save_pretrained('s3://sentstorage/model')
+    
 
 
 
