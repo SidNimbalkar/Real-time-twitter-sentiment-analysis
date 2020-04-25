@@ -1,0 +1,523 @@
+{
+    "dashboards": [
+        {
+            "__Dashboard__": {
+                "css": "",
+                "dashboard_title": "Analysis",
+                "description": null,
+                "json_metadata": "{\"timed_refresh_immune_slices\": [], \"expanded_slices\": {}, \"refresh_frequency\": 0, \"default_filters\": \"{}\", \"color_scheme\": \"bnbColors\", \"label_colors\": {\"negative\": \"#ff5a5f\", \"neutral\": \"#7b0051\", \"positive\": \"#007A87\"}, \"remote_id\": 7}",
+                "position_json": "{\"CHART-8tM8vGk7Za\":{\"children\":[],\"id\":\"CHART-8tM8vGk7Za\",\"meta\":{\"chartId\":247,\"height\":50,\"sliceName\":\"Sentiment distribution for the topic\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-KqWHRc0J2\"],\"type\":\"CHART\"},\"CHART-N9rZxmLOJe\":{\"children\":[],\"id\":\"CHART-N9rZxmLOJe\",\"meta\":{\"chartId\":248,\"height\":50,\"sliceName\":\"Top 10 negative tweets\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-KqWHRc0J2\"],\"type\":\"CHART\"},\"CHART-RnQsvCsNYF\":{\"children\":[],\"id\":\"CHART-RnQsvCsNYF\",\"meta\":{\"chartId\":249,\"height\":50,\"sliceName\":\"Top 10 positive tweets\",\"width\":4},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-KqWHRc0J2\"],\"type\":\"CHART\"},\"CHART-jCHSPYcole\":{\"children\":[],\"id\":\"CHART-jCHSPYcole\",\"meta\":{\"chartId\":245,\"height\":38,\"sliceName\":\"Trend graphs for sentiments\",\"width\":12},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-yiKM-z-DM\"],\"type\":\"CHART\"},\"CHART-xQ_2drWj_6\":{\"children\":[],\"id\":\"CHART-xQ_2drWj_6\",\"meta\":{\"chartId\":246,\"height\":48,\"sliceName\":\"Most relevant tweets\",\"width\":12},\"parents\":[\"ROOT_ID\",\"GRID_ID\",\"ROW-25hDs7JzFN\"],\"type\":\"CHART\"},\"DASHBOARD_VERSION_KEY\":\"v2\",\"GRID_ID\":{\"children\":[\"ROW-yiKM-z-DM\",\"ROW-KqWHRc0J2\",\"ROW-25hDs7JzFN\"],\"id\":\"GRID_ID\",\"parents\":[\"ROOT_ID\"],\"type\":\"GRID\"},\"HEADER_ID\":{\"id\":\"HEADER_ID\",\"meta\":{\"text\":\"Analysis\"},\"type\":\"HEADER\"},\"ROOT_ID\":{\"children\":[\"GRID_ID\"],\"id\":\"ROOT_ID\",\"type\":\"ROOT\"},\"ROW-25hDs7JzFN\":{\"children\":[\"CHART-xQ_2drWj_6\"],\"id\":\"ROW-25hDs7JzFN\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"},\"ROW-KqWHRc0J2\":{\"children\":[\"CHART-N9rZxmLOJe\",\"CHART-8tM8vGk7Za\",\"CHART-RnQsvCsNYF\"],\"id\":\"ROW-KqWHRc0J2\",\"meta\":{\"0\":\"ROOT_ID\",\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"},\"ROW-yiKM-z-DM\":{\"children\":[\"CHART-jCHSPYcole\"],\"id\":\"ROW-yiKM-z-DM\",\"meta\":{\"background\":\"BACKGROUND_TRANSPARENT\"},\"parents\":[\"ROOT_ID\",\"GRID_ID\"],\"type\":\"ROW\"}}",
+                "slices": [
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "druid",
+                            "datasource_type": "table",
+                            "id": 245,
+                            "params": "{\"adhoc_filters\": [], \"annotation_layers\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"comparison_type\": \"values\", \"contribution\": false, \"datasource\": \"13__table\", \"granularity_sqla\": \"__time\", \"groupby\": [\"sentiment\"], \"label_colors\": {}, \"left_margin\": \"auto\", \"line_interpolation\": \"linear\", \"metrics\": [{\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"favorite_count_max\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 437, \"is_dttm\": false, \"type\": \"LONG\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"COUNT(favorite_count_max)\", \"optionName\": \"metric_7b19ahprunq_d2zqnn2ctfc\", \"sqlExpression\": null}], \"order_desc\": true, \"resample_method\": null, \"resample_rule\": null, \"rich_tooltip\": true, \"rolling_type\": \"None\", \"row_limit\": 10000, \"send_time_range\": false, \"show_brush\": \"auto\", \"show_legend\": true, \"show_markers\": false, \"slice_id\": 245, \"time_grain_sqla\": \"PT1M\", \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"timeseries_limit_metric\": null, \"url_params\": {}, \"viz_type\": \"line\", \"x_axis_format\": \"smart_date\", \"x_axis_label\": \"\", \"x_axis_showminmax\": false, \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_label\": \"\", \"y_axis_showminmax\": false, \"y_log_scale\": false, \"remote_id\": 245, \"datasource_name\": \"druid\", \"schema\": null, \"database_name\": \"DruidData\"}",
+                            "slice_name": "Trend graphs for sentiments",
+                            "viz_type": "line"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "druid",
+                            "datasource_type": "table",
+                            "id": 246,
+                            "params": "{\"adhoc_filters\": [], \"align_pn\": false, \"all_columns\": [], \"color_pn\": true, \"datasource\": \"13__table\", \"granularity_sqla\": \"__time\", \"groupby\": [\"text\"], \"include_search\": false, \"include_time\": false, \"metrics\": [{\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"favorite_count\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 435, \"is_dttm\": false, \"optionName\": \"_col_favorite_count\", \"type\": \"LONG\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"COUNT(favorite_count)\", \"optionName\": \"metric_oganwepbwz_6bg9xmmsjfb\", \"sqlExpression\": null}], \"order_by_cols\": [], \"order_desc\": true, \"page_length\": 0, \"percent_metrics\": [], \"row_limit\": 10000, \"show_cell_bars\": true, \"slice_id\": 246, \"table_filter\": false, \"table_timestamp_format\": \"%Y-%m-%d %H:%M:%S\", \"time_grain_sqla\": \"P1D\", \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"timeseries_limit_metric\": null, \"url_params\": {}, \"viz_type\": \"table\", \"remote_id\": 246, \"datasource_name\": \"druid\", \"schema\": null, \"database_name\": \"DruidData\"}",
+                            "slice_name": "Most relevant tweets",
+                            "viz_type": "table"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "druid",
+                            "datasource_type": "table",
+                            "id": 247,
+                            "params": "{\"adhoc_filters\": [], \"color_scheme\": \"bnbColors\", \"datasource\": \"13__table\", \"donut\": false, \"granularity_sqla\": \"__time\", \"groupby\": [\"sentiment\"], \"label_colors\": {}, \"labels_outside\": true, \"metric\": {\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"favorite_count\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 435, \"is_dttm\": false, \"optionName\": \"_col_favorite_count\", \"type\": \"LONG\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": false, \"hasCustomLabel\": false, \"label\": \"COUNT(favorite_count)\", \"optionName\": \"metric_e4dtdr4wuzo_nyuhruxdv0m\", \"sqlExpression\": null}, \"number_format\": \"SMART_NUMBER\", \"pie_label_type\": \"key\", \"row_limit\": 10000, \"show_labels\": true, \"show_legend\": true, \"slice_id\": 247, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"pie\", \"remote_id\": 247, \"datasource_name\": \"druid\", \"schema\": null, \"database_name\": \"DruidData\"}",
+                            "slice_name": "Sentiment distribution for the topic",
+                            "viz_type": "pie"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "druid",
+                            "datasource_type": "table",
+                            "id": 248,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": \"'negative'\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_jfa8ee5e9b_s8gstw2616\", \"fromFormData\": true, \"isExtra\": false, \"operator\": \"==\", \"sqlExpression\": null, \"subject\": \"sentiment\"}], \"align_pn\": false, \"all_columns\": [], \"color_pn\": true, \"datasource\": \"13__table\", \"granularity_sqla\": \"__time\", \"groupby\": [\"text\"], \"include_search\": false, \"include_time\": false, \"metrics\": [{\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"favorite_count\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 435, \"is_dttm\": false, \"optionName\": \"_col_favorite_count\", \"type\": \"LONG\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"COUNT(favorite_count)\", \"optionName\": \"metric_6bq598fya73_mrhmctlzjv\", \"sqlExpression\": null}], \"order_by_cols\": [], \"order_desc\": true, \"page_length\": 0, \"percent_metrics\": [], \"row_limit\": 10, \"show_cell_bars\": true, \"slice_id\": 248, \"table_filter\": false, \"table_timestamp_format\": \"%Y-%m-%d %H:%M:%S\", \"time_grain_sqla\": \"PT1M\", \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"timeseries_limit_metric\": null, \"url_params\": {}, \"viz_type\": \"table\", \"remote_id\": 248, \"datasource_name\": \"druid\", \"schema\": null, \"database_name\": \"DruidData\"}",
+                            "slice_name": "Top 10 negative tweets",
+                            "viz_type": "table"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "druid",
+                            "datasource_type": "table",
+                            "id": 249,
+                            "params": "{\"adhoc_filters\": [{\"clause\": \"WHERE\", \"comparator\": \"positive\", \"expressionType\": \"SIMPLE\", \"filterOptionName\": \"filter_o2extjxnrjj_bemyaqa2vf5\", \"fromFormData\": true, \"isExtra\": false, \"operator\": \"==\", \"sqlExpression\": null, \"subject\": \"sentiment\"}], \"align_pn\": false, \"all_columns\": [], \"color_pn\": true, \"datasource\": \"13__table\", \"granularity_sqla\": \"__time\", \"groupby\": [\"text\"], \"include_search\": false, \"include_time\": false, \"metrics\": [{\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"favorite_count\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 435, \"is_dttm\": false, \"optionName\": \"_col_favorite_count\", \"type\": \"LONG\", \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"fromFormData\": true, \"hasCustomLabel\": false, \"label\": \"COUNT(favorite_count)\", \"optionName\": \"metric_irb6oaf0te_me2zmbf5mqb\", \"sqlExpression\": null}], \"order_by_cols\": [], \"order_desc\": true, \"page_length\": 0, \"percent_metrics\": [], \"row_limit\": 10, \"show_cell_bars\": true, \"slice_id\": 249, \"table_filter\": false, \"table_timestamp_format\": \"%Y-%m-%d %H:%M:%S\", \"time_grain_sqla\": \"PT1M\", \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"timeseries_limit_metric\": null, \"url_params\": {}, \"viz_type\": \"table\", \"remote_id\": 249, \"datasource_name\": \"druid\", \"schema\": null, \"database_name\": \"DruidData\"}",
+                            "slice_name": "Top 10 positive tweets",
+                            "viz_type": "table"
+                        }
+                    }
+                ],
+                "slug": null
+            }
+        }
+    ],
+    "datasources": [
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "__time",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 434,
+                            "is_active": true,
+                            "is_dttm": true,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "LONG",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "favorite_count",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 435,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "LONG",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "favorite_count_average",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 436,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "FLOAT",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "favorite_count_max",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 437,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "LONG",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "favorite_count_min",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 438,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "LONG",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "favorite_count_range",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 439,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "followers_count",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 440,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "LONG",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "followers_count_average",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 441,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "FLOAT",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "followers_count_max",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 442,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "LONG",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "followers_count_min",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 443,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "LONG",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "followers_count_range",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 444,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "id",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 445,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "LONG",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "id_str",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 446,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "LONG",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "sentiment",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 447,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "sentiment_value",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 448,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "FLOAT",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "text",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 449,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "STRING",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "column_name": "tweet_favorite_count",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 450,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 13,
+                            "type": "LONG",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 2,
+                "default_endpoint": null,
+                "description": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2020-04-24T23:00:07"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "COUNT(*)",
+                            "id": 21,
+                            "metric_name": "count",
+                            "metric_type": "count",
+                            "table_id": 13,
+                            "verbose_name": "COUNT(*)",
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 13, \"database_name\": \"DruidData\"}",
+                "schema": null,
+                "sql": null,
+                "table_name": "druid",
+                "template_params": null
+            }
+        }
+    ]
+}
