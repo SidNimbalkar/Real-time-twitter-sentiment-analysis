@@ -38,6 +38,10 @@ Sri Krishnamurthy
 - Use K8 to manage containers 
 - Deploy to EC2
 
+## System Architecture
+
+![alt text](https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/arch.png)
+
 ## Install instructions
 
 ### Create an Amazon Web Services (AWS) account
