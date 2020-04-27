@@ -1,15 +1,4 @@
 # Real Time Twitter Sentiment Analysis for Trend tracking or Brand Improvement<br />
-<p align="center">
-  <img src="https://github.com/SidNimbalkar/CSYE7245FinalProject/blob/master/Images/logo.png">
-</p>
-
-### Collabarators 
-Gurjot Kaur<br/>
-Harshitha Sanikommu<br/>
-Sid Nimbalkar
-
-### Professor
-Sri Krishnamurthy
 
 [Codelab](https://codelabs-preview.appspot.com/?file_id=1YoUtFfHCL5bHXWiUgjyCTtFCO-uAxqrq3rBP0-dcWqw#7)
 
